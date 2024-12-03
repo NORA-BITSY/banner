@@ -1,0 +1,54 @@
+:root {
+    --banner-height: 40px;
+}
+
+#banner {
+    line-height: var(--banner-height);
+    top: 0;
+    z-index: 1030;
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    background-color: #00a393;
+    color: #ffffff;
+}
+
+/* TODO Remove this CSS when using Bootstrap 5 on HumHub 1.18 */
+#banner .btn-outlined {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff !important;
+    font-weight: normal;
+    padding: 2px 8px;
+    margin-top: -3px;
+    font-size: var(--hh-ct-font-size);
+}
+#banner .btn-outlined:hover,
+#banner .btn-outlined:focus,
+#banner .btn-outlined:active {
+    background-color: var(--link);
+    color: #fff;
+    border-color: var(--link);
+}
+
+@media screen and (max-width: 430px) {
+    #banner,
+    #banner button {
+        font-size: 14px !important;
+    }
+}
+
+body {
+    padding-top: calc(var(--banner-height) + var(--hh-ct-top-bar-height) + var(--hh-ct-top-bar-bottom-spacing));
+}
+
+#topbar {
+    top: var(--banner-height);
+}
+
+@media (max-width: 570px) {
+    #topbar > .container .notifications .dropdown-menu {
+        top: calc(var(--hh-ct-top-bar-height) + var(--banner-height)) !important;
+    }
+}
