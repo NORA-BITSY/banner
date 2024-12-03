@@ -8,6 +8,7 @@
 
 namespace humhub\modules\banner;
 
+use humhub\components\Event;
 use humhub\modules\banner\models\Configuration;
 use Yii;
 use yii\helpers\Url;
@@ -20,6 +21,8 @@ use yii\helpers\Url;
  */
 class Module extends \humhub\components\Module
 {
+    public const EVENT_AFTER_GET_CONFIGURATION = 'afterGetBannerConfiguration';
+
     /**
      * @var string defines the icon
      */
@@ -37,7 +40,12 @@ class Module extends \humhub\components\Module
         if ($this->_configuration === null) {
             $this->_configuration = new Configuration(['settingsManager' => $this->settings]);
             $this->_configuration->loadBySettings();
+
+            $evt = new Event(['result' => $this->_configuration]);
+            Event::trigger($this, static::EVENT_AFTER_GET_CONFIGURATION, $evt);
+            $this->_configuration = $evt->result;
         }
+
         return $this->_configuration;
     }
 

@@ -37,7 +37,7 @@ class Configuration extends Model
     public function attributeLabels()
     {
         return [
-            'enabled' => Yii::t('BannerModule.base', 'Enabled'),
+            'enabled' => Yii::t('BannerModule.config', 'Enabled'),
             'content' => Yii::t('BannerModule.config', 'Banner content'),
         ];
     }

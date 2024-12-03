@@ -29,7 +29,7 @@ class Events
         $module = Yii::$app->getModule('banner');
         $configuration = $module->getConfiguration();
 
-        if (!$configuration->enabled) {
+        if (!$configuration->enabled || !$configuration->content) {
             return;
         }
 

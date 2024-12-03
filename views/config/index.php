@@ -11,11 +11,13 @@ use humhub\modules\banner\Module;
 use humhub\modules\ui\form\widgets\ActiveForm;
 use humhub\modules\ui\view\components\View;
 use humhub\widgets\Button;
+use yii\bootstrap\Alert;
 
 
 /**
  * @var $this View
  * @var $model Configuration
+ * @var $isActiveEvent bool
  */
 
 /** @var Module $module */
@@ -32,6 +34,13 @@ $module = Yii::$app->getModule('banner');
     </div>
 
     <div class="panel-body">
+        <?php if ($isActiveEvent): ?>
+            <?= Alert::widget([
+                'body' => Yii::t('BannerModule.config', 'An event has been detected. This configuration may be overridden by the event.'),
+                'options' => ['class' => 'alert-danger'],
+            ]) ?>
+        <?php endif; ?>
+
         <?php $form = ActiveForm::begin(['acknowledge' => true]); ?>
         <?= $form->field($model, 'enabled')->checkbox() ?>
         <?= $form->field($model, 'content')->textarea() ?>
