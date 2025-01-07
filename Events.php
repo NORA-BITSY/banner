@@ -11,12 +11,12 @@ namespace humhub\modules\banner;
 use humhub\modules\banner\assets\BannerAssets;
 use humhub\modules\ui\view\components\View;
 use Yii;
-use yii\base\ViewEvent;
+use yii\base\Event;
 use yii\helpers\Url;
 
 class Events
 {
-    public static function onViewAfterRender(ViewEvent $event)
+    public static function onViewBeginBody(Event $event)
     {
         if (
             Yii::$app->request->isConsoleRequest

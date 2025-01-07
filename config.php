@@ -18,8 +18,8 @@ return [
     'events' => [
         [
             'class' => View::class,
-            'event' => View::EVENT_AFTER_RENDER,
-            'callback' => [Events::class, 'onViewAfterRender'],
+            'event' => View::EVENT_BEGIN_BODY,
+            'callback' => [Events::class, 'onViewBeginBody'],
         ],
     ],
 ];
