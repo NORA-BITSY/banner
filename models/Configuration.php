@@ -18,7 +18,7 @@ class Configuration extends Model
 
     public bool $enabled = false;
     public ?string $content = '';
-
+    public bool $closeButton = false;
 
     /**
      * @inheritdoc
@@ -26,7 +26,7 @@ class Configuration extends Model
     public function rules()
     {
         return [
-            [['enabled'], 'boolean'],
+            [['enabled', 'closeButton'], 'boolean'],
             [['content'], 'string'],
         ];
     }
@@ -39,6 +39,7 @@ class Configuration extends Model
         return [
             'enabled' => Yii::t('BannerModule.config', 'Enabled'),
             'content' => Yii::t('BannerModule.config', 'Banner content'),
+            'closeButton' => Yii::t('BannerModule.config', 'Close button'),
         ];
     }
 

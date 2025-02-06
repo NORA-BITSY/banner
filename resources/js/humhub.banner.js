@@ -21,9 +21,14 @@ humhub.module('banner', function (module, require, $) {
             url: module.config.contentUrl,
             dataType: 'html'
         })
-            .done(function (data) {
-                $('body').prepend(data);
+        .done(function (data) {
+            $('body').prepend(data).promise().done(function() {
+                $('#banner-close').on('click', function () {
+                    $('#banner').hide();
+                    $(':root').css('--banner-height', '0px');
+                });
             });
+        });
     };
 
     module.export({

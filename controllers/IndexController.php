@@ -22,6 +22,7 @@ class IndexController extends Controller
 
         return $this->renderPartial('index', [
             'content' => $configuration->content,
+            'closeButton' => $configuration->closeButton,
         ]);
     }
 }

@@ -9,6 +9,7 @@
 /**
  * @var $view View
  * @var $content string
+ * @var $closeButton bool
  */
 
 use humhub\modules\ui\view\components\View;
@@ -16,5 +17,14 @@ use humhub\modules\ui\view\components\View;
 ?>
 
 <div id="banner">
+    <?php if ($closeButton): ?>
+        <button id="banner-close" type="button" class="close">×</button>
+    <?php endif; ?>
     <?= $content ?>
 </div>
+
+<script >
+    $(document).ready(function () {
+        $('#banner').fadeIn(1000);
+    });
+</script>
