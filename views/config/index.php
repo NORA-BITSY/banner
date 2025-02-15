@@ -34,6 +34,22 @@ $module = Yii::$app->getModule('banner');
     </div>
 
     <div class="panel-body">
+        <div class="alert alert-info cuzy-free-module-info">
+            This module was created and is maintained by
+            <a href="https://www.cuzy.app/"
+               target="_blank">CUZY.APP (view other modules)</a>.
+            <br>
+            It's free, but it's the result of a lot of design and maintenance work over time.
+            <br>
+            If it's useful to you, please consider
+            <a href="https://www.cuzy.app/checkout/donate/"
+               target="_blank">making a donation</a>
+            or
+            <a href="https://github.com/cuzy-app/clean-theme"
+               target="_blank">participating in the code</a>.
+            Thanks!
+        </div>
+
         <?php if ($isActiveEvent): ?>
             <?= Alert::widget([
                 'body' => Yii::t('BannerModule.config', 'An event has been detected. This configuration may be overridden by the event.'),

@@ -22,7 +22,7 @@
     font-weight: normal;
     padding: 2px 8px;
     margin-top: -3px;
-    font-size: var(--hh-ct-font-size);
+    font-size: var(--hh-ct-font-size, 1rem);
 }
 #banner .btn-outlined:hover,
 #banner .btn-outlined:focus,
@@ -48,15 +48,18 @@
 }
 
 body {
-    padding-top: calc(var(--banner-height) + var(--hh-ct-top-bar-height) + var(--hh-ct-top-bar-bottom-spacing));
+    padding-top: calc(var(--banner-height) + var(--hh-fixed-header-height, 0px) + var(--hh-ct-top-bar-height, 0px) + var(--hh-ct-top-bar-bottom-spacing, 0px));
 }
 
-#topbar {
+#topbar, #topbar-first {
     top: var(--banner-height);
+}
+#topbar-second {
+    top: calc(var(--banner-height) + 50px);
 }
 
 @media (max-width: 570px) {
     #topbar > .container .notifications .dropdown-menu {
-        top: calc(var(--hh-ct-top-bar-height) + var(--banner-height)) !important;
+        top: calc(var(--hh-ct-top-bar-height, 0px) + var(--banner-height)) !important;
     }
 }
