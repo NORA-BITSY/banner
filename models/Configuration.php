@@ -9,6 +9,7 @@
 namespace humhub\modules\banner\models;
 
 use humhub\components\SettingsManager;
+use humhub\libs\Html;
 use Yii;
 use yii\base\Model;
 
@@ -48,8 +49,18 @@ class Configuration extends Model
      */
     public function attributeHints()
     {
+        $example =
+'<style>
+    :root {
+        --banner-height: 100px;
+    }
+</style>';
+
         return [
-            'content' => Yii::t('BannerModule.config', 'HTML code is allowed.'),
+            'content' =>
+                Yii::t('BannerModule.config', 'HTML code is allowed.') . '<br>' .
+                Yii::t('BannerModule.config', 'E.g., you can change the height of the banner:') . '<br>' .
+                Html::tag('code', nl2br(str_replace(' ', '&nbsp;', Html::encode($example)))),
         ];
     }
 
