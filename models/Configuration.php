@@ -39,7 +39,7 @@ class Configuration extends Model
     {
         return [
             'enabled' => Yii::t('BannerModule.config', 'Enabled'),
-            'content' => Yii::t('BannerModule.config', 'Banner content'),
+            'content' => Yii::t('BannerModule.config', 'Banner content (HTML)'),
             'closeButton' => Yii::t('BannerModule.config', 'Close button'),
         ];
     }
@@ -52,14 +52,14 @@ class Configuration extends Model
         $example =
 '<style>
     :root {
-        --banner-height: 100px;
+        --banner-height: 60px;
+        --banner-bg-color: red;
     }
 </style>';
 
         return [
             'content' =>
-                Yii::t('BannerModule.config', 'HTML code is allowed.') . '<br>' .
-                Yii::t('BannerModule.config', 'E.g., you can change the height of the banner:') . '<br>' .
+                Yii::t('BannerModule.config', 'Examples of CSS values that can be overwritten:') . '<br>' .
                 Html::tag('code', nl2br(str_replace(' ', '&nbsp;', Html::encode($example)))),
         ];
     }
@@ -67,6 +67,7 @@ class Configuration extends Model
     public function loadBySettings(): void
     {
         $this->enabled = (bool)$this->settingsManager->get('enabled', $this->enabled);
+        $this->closeButton = (bool)$this->settingsManager->get('closeButton', $this->closeButton);
         $this->content = $this->settingsManager->get('content', $this->content);
     }
 
@@ -77,6 +78,7 @@ class Configuration extends Model
         }
 
         $this->settingsManager->set('enabled', $this->enabled);
+        $this->settingsManager->set('closeButton', $this->closeButton);
         $this->settingsManager->set('content', $this->content);
 
         return true;

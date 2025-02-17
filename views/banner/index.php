@@ -12,6 +12,7 @@
  * @var $closeButton bool
  */
 
+use humhub\libs\Html;
 use humhub\modules\ui\view\components\View;
 
 ?>
@@ -23,8 +24,13 @@ use humhub\modules\ui\view\components\View;
     <?= $content ?>
 </div>
 
-<script >
-    $(document).ready(function () {
-        $('#banner').fadeIn(1000);
+<script <?= Html::nonce() ?>>
+    $(function () {
+        <?php if ($closeButton): ?>
+            $('#banner-close').on('click', function () {
+                $('#banner').hide();
+                $(':root').css('--banner-height', '0px');
+            });
+        <?php endif; ?>
     });
 </script>

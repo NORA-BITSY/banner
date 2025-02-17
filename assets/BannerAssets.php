@@ -19,6 +19,5 @@ class BannerAssets extends AssetBundle
     ];
 
     public $js = [
-        'js/humhub.banner.js',
     ];
 }

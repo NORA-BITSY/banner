@@ -9,6 +9,7 @@
 use humhub\modules\banner\models\Configuration;
 use humhub\modules\banner\Module;
 use humhub\modules\ui\form\widgets\ActiveForm;
+use humhub\modules\ui\form\widgets\CodeMirrorInputWidget;
 use humhub\modules\ui\view\components\View;
 use humhub\widgets\Button;
 use yii\bootstrap\Alert;
@@ -59,7 +60,8 @@ $module = Yii::$app->getModule('banner');
 
         <?php $form = ActiveForm::begin(['acknowledge' => true]); ?>
         <?= $form->field($model, 'enabled')->checkbox() ?>
-        <?= $form->field($model, 'content')->textarea() ?>
+        <?= $form->field($model, 'closeButton')->checkbox() ?>
+        <?= $form->field($model, 'content')->widget(CodeMirrorInputWidget::class) ?>
         <?= Button::save()->submit() ?>
         <?php ActiveForm::end(); ?>
 

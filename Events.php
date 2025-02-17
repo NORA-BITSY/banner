@@ -12,7 +12,6 @@ use humhub\modules\banner\assets\BannerAssets;
 use humhub\modules\ui\view\components\View;
 use Yii;
 use yii\base\Event;
-use yii\helpers\Url;
 
 class Events
 {
@@ -36,10 +35,11 @@ class Events
         /** @var View $view */
         $view = $event->sender;
 
-        $view->registerJsConfig('banner', [
-            'contentUrl' => Url::to(['/banner/index/index']),
-        ]);
-
         BannerAssets::register($view);
+
+        echo Yii::$app->controller->renderPartial('@banner/views/banner/index', [
+            'content' => $configuration->content,
+            'closeButton' => $configuration->closeButton,
+        ]);
     }
 }
