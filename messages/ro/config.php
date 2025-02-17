@@ -1,7 +1,8 @@
 <?php
-return array (
+return [
   'An event has been detected. This configuration may be overridden by the event.' => 'A fost detectat un eveniment. Această configurație poate fi suprascrisă de eveniment.',
-  'Banner content' => 'Conținut banner',
+  'Banner content (HTML)' => 'Conținut banner (HTML)',
+  'Close button' => 'Butonul de închidere',
   'Enabled' => 'Activat',
-  'HTML code is allowed.' => 'Codul HTML este permis.',
-);
+  'Examples of CSS values that can be overwritten:' => 'Exemple de valori CSS care pot fi suprascrise:',
+];

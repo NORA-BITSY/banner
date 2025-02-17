@@ -1,7 +1,8 @@
 <?php
-return array (
+return [
   'An event has been detected. This configuration may be overridden by the event.' => 'Εντοπίστηκε ένα συμβάν. Αυτή η διαμόρφωση ενδέχεται να παρακαμφθεί από το συμβάν.',
-  'Banner content' => 'Περιεχόμενο banner',
+  'Banner content (HTML)' => 'Περιεχόμενο banner (HTML)',
+  'Close button' => 'Κουμπί κλεισίματος',
   'Enabled' => 'Ενεργοποιήθηκε',
-  'HTML code is allowed.' => 'Ο κώδικας HTML επιτρέπεται.',
-);
+  'Examples of CSS values that can be overwritten:' => 'Παραδείγματα τιμών CSS που μπορούν να αντικατασταθούν:',
+];

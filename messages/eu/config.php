@@ -1,7 +1,8 @@
 <?php
-return array (
+return [
   'An event has been detected. This configuration may be overridden by the event.' => 'Gertaera bat detektatu da. Baliteke konfigurazio hau gertaerak gainidaztea.',
-  'Banner content' => 'Banner edukia',
+  'Banner content (HTML)' => 'Banner edukia (HTML)',
+  'Close button' => 'Itxi botoia',
   'Enabled' => 'Gaituta',
-  'HTML code is allowed.' => 'HTML kodea onartzen da.',
-);
+  'Examples of CSS values that can be overwritten:' => 'Gainidatzi daitezkeen CSS balioen adibideak:',
+];

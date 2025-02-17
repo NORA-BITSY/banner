@@ -1,7 +1,8 @@
 <?php
-return array (
+return [
   'An event has been detected. This configuration may be overridden by the event.' => 'Se ha detectado un evento. El evento puede anular esta configuración.',
-  'Banner content' => 'Contenido del banner',
+  'Banner content (HTML)' => 'Contenido del banner (HTML)',
+  'Close button' => 'Botón cerrar',
   'Enabled' => 'Activado',
-  'HTML code is allowed.' => 'Se permite código HTML.',
-);
+  'Examples of CSS values that can be overwritten:' => 'Ejemplos de valores CSS que se pueden sobrescribir:',
+];

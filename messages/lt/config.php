@@ -1,7 +1,8 @@
 <?php
-return array (
+return [
   'An event has been detected. This configuration may be overridden by the event.' => 'Aptiktas įvykis. Įvykis gali nepaisyti šios konfigūracijos.',
-  'Banner content' => 'Reklamjuostės turinys',
+  'Banner content (HTML)' => 'Reklamjuostės turinys (HTML)',
+  'Close button' => 'Uždaryti mygtuką',
   'Enabled' => 'Įjungta',
-  'HTML code is allowed.' => 'HTML kodas leidžiamas.',
-);
+  'Examples of CSS values that can be overwritten:' => 'CSS reikšmių, kurias galima perrašyti, pavyzdžiai:',
+];

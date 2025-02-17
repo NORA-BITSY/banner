@@ -1,7 +1,8 @@
 <?php
-return array (
+return [
   'An event has been detected. This configuration may be overridden by the event.' => '已檢測到事件。此配置可能會被事件覆寫。',
-  'Banner content' => '橫幅內容',
+  'Banner content (HTML)' => '橫幅內容 (HTML)',
+  'Close button' => '關閉按鈕',
   'Enabled' => '啟用',
-  'HTML code is allowed.' => '允許使用 HTML 程式碼。',
-);
+  'Examples of CSS values that can be overwritten:' => '可以覆蓋的 CSS 值範例：',
+];

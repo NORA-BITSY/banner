@@ -2,7 +2,8 @@
 
 return [
     'An event has been detected. This configuration may be overridden by the event.' => '',
-    'Banner content' => '',
+    'Banner content (HTML)' => '',
+    'Close button' => '',
     'Enabled' => '',
-    'HTML code is allowed.' => '',
+    'Examples of CSS values that can be overwritten:' => '',
 ];

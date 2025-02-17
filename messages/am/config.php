@@ -1,7 +1,8 @@
 <?php
-return array (
+return [
   'An event has been detected. This configuration may be overridden by the event.' => 'አንድ ክስተት ተገኝቷል። ይህ ውቅር በክስተቱ ሊሻር ይችላል።',
-  'Banner content' => 'የሰንደቅ ይዘት',
+  'Banner content (HTML)' => 'የሰንደቅ ይዘት (ኤችቲኤምኤል)',
+  'Close button' => 'ዝጋ አዝራር',
   'Enabled' => 'ነቅቷል',
-  'HTML code is allowed.' => 'HTML ኮድ ተፈቅዷል።',
-);
+  'Examples of CSS values that can be overwritten:' => 'ሊገለበጡ የሚችሉ የCSS እሴቶች ምሳሌዎች፡-',
+];

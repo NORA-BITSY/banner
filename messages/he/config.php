@@ -1,7 +1,8 @@
 <?php
-return array (
+return [
   'An event has been detected. This configuration may be overridden by the event.' => 'זוהה אירוע. ייתכן שהאירוע יעקוף תצורה זו.',
-  'Banner content' => 'תוכן באנר',
+  'Banner content (HTML)' => 'תוכן באנר (HTML)',
+  'Close button' => 'כפתור סגירה',
   'Enabled' => 'מופעל',
-  'HTML code is allowed.' => 'קוד HTML מותר.',
-);
+  'Examples of CSS values that can be overwritten:' => 'דוגמאות לערכי CSS שניתן להחליף:',
+];

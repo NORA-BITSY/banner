@@ -1,7 +1,8 @@
 <?php
-return array (
+return [
   'An event has been detected. This configuration may be overridden by the event.' => 'Bola zistená udalosť. Táto konfigurácia môže byť prepísaná udalosťou.',
-  'Banner content' => 'Obsah bannera',
+  'Banner content (HTML)' => 'Obsah bannera (HTML)',
+  'Close button' => 'Tlačidlo Zavrieť',
   'Enabled' => 'Povolené',
-  'HTML code is allowed.' => 'HTML kód je povolený.',
-);
+  'Examples of CSS values that can be overwritten:' => 'Príklady hodnôt CSS, ktoré možno prepísať:',
+];

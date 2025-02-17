@@ -1,7 +1,8 @@
 <?php
-return array (
+return [
   'An event has been detected. This configuration may be overridden by the event.' => 'Zaznan je bil dogodek. To konfiguracijo lahko preglasi dogodek.',
-  'Banner content' => 'Vsebina pasice',
+  'Banner content (HTML)' => 'Vsebina pasice (HTML)',
+  'Close button' => 'Gumb za zapiranje',
   'Enabled' => 'Omogočeno',
-  'HTML code is allowed.' => 'Koda HTML je dovoljena.',
-);
+  'Examples of CSS values that can be overwritten:' => 'Primeri vrednosti CSS, ki jih je mogoče prepisati:',
+];
