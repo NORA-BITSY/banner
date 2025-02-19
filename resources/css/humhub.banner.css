@@ -49,7 +49,10 @@
 }
 
 body {
-    padding-top: calc(var(--banner-height) + var(--hh-fixed-header-height, 0px) + var(--hh-ct-top-bar-height, 0px) + var(--hh-ct-top-bar-bottom-spacing, 0px));
+    padding-top: calc(var(--banner-height) + var(--hh-fixed-header-height, 0px));
+    &.clean-theme {
+        padding-top: calc(var(--banner-height) + var(--hh-ct-top-bar-height) + var(--hh-ct-top-bar-bottom-spacing));
+    }
 }
 
 #topbar, #topbar-first {
