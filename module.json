@@ -3,7 +3,7 @@
   "name": "Banner",
   "description": "Add a customizable banner at the top of the screen",
   "keywords": [],
-  "version": "0.1",
+  "version": "1.0",
   "humhub": {
     "minVersion": "1.17"
   },

@@ -52,8 +52,9 @@ class Configuration extends Model
         $example =
 '<style>
     :root {
-        --banner-height: 60px;
-        --banner-bg-color: red;
+        --banner-height: 60px; /** default 40px */
+        --banner-font-color: var(--text-color-contrast); /** default var(--text-color-highlight) */
+        --banner-bg-color: var(--info); /** default var(--warning) */
     }
 </style>';
 

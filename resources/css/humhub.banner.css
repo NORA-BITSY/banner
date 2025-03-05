@@ -1,25 +1,30 @@
 :root {
     --banner-height: 40px;
-    --banner-bg-color: #00a393;
+    --banner-font-color: var(--text-color-highlight);
+    --banner-bg-color: var(--warning);
 }
 
 #banner {
+    height: var(--banner-height);
     line-height: var(--banner-height);
     top: 0;
     z-index: 1030;
     position: fixed;
     width: 100%;
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 15px;
     text-align: center;
     background-color: var(--banner-bg-color);
-    color: #ffffff;
+    color: var(--banner-font-color);
 }
 
 /* TODO Remove this CSS when using Bootstrap 5 on HumHub 1.18 */
 #banner .btn-outlined {
     background-color: transparent;
-    border: 1px solid #fff;
-    color: #fff !important;
+    border: 1px solid var(--text-color-contrast);
+    color: var(--text-color-contrast) !important;
     font-weight: normal;
     padding: 2px 8px;
     margin-top: -3px;
@@ -29,14 +34,14 @@
 #banner .btn-outlined:focus,
 #banner .btn-outlined:active {
     background-color: var(--link);
-    color: #fff;
+    color: var(--text-color-contrast);
     border-color: var(--link);
 }
 
 #banner-close {
-    color: #FFF;
+    color: var(--banner-font-color);
     opacity: 0.7;
-    padding: 0 15px;
+    padding-left: 15px;
     height: var(--banner-height);
     display: block;
 }

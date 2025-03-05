@@ -4,9 +4,11 @@
 
 ## Features
 
-The configuration page allows to define a custom HTML code to be displayed on the top of the page.
+Displays a custom HTML code at the top of the page.
 
-## Requirements
+The HTML code can be customized in the module configuration or programmatically from another module via the `Module::EVENT_AFTER_GET_CONFIGURATION` event.
+
+Compatible with the HumHub, Enterprise and Clean themes.
 
 ## Pricing
 
