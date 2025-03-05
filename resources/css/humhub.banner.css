@@ -1,7 +1,7 @@
 :root {
     --banner-height: 40px;
-    --banner-font-color: var(--text-color-highlight);
-    --banner-bg-color: var(--warning);
+    --banner-font-color: var(--text-color-contrast);
+    --banner-bg-color: var(--info);
 }
 
 #banner {

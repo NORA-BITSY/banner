@@ -53,8 +53,8 @@ class Configuration extends Model
 '<style>
     :root {
         --banner-height: 60px; /** default 40px */
-        --banner-font-color: var(--text-color-contrast); /** default var(--text-color-highlight) */
-        --banner-bg-color: var(--info); /** default var(--warning) */
+        --banner-font-color: var(--text-color-contrast); /** default var(--text-color-contrast) */
+        --banner-bg-color: var(--danger); /** default var(--info) */
     }
 </style>';
 
