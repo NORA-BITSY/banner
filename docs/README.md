@@ -4,7 +4,7 @@
 
 ## Features
 
-Displays a custom HTML code at the top of the page.
+Displays a custom HTML code at the top of the page to logged-in users.
 
 The HTML code can be customized in the module configuration or programmatically from another module via the `Module::EVENT_AFTER_GET_CONFIGURATION` event.
 

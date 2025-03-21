@@ -18,7 +18,7 @@ class Events
     public static function onViewBeginBody(Event $event)
     {
         if (
-            Yii::$app->request->isConsoleRequest
+            Yii::$app->user->isGuest
             || Yii::$app->request->isAjax
         ) {
             return;
