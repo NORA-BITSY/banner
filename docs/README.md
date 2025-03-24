@@ -14,7 +14,7 @@ Compatible with the HumHub, Enterprise and Clean themes.
 
 This module is free, but the result of a lot of work for design and maintenance over time.
 
-If it's useful to you, please consider [making a donation](https://www.cuzy.app/checkout/donate/) or [participating in the code](https://github.com/cuzy-app/clean-theme). Thanks!
+If it's useful to you, please consider [making a donation](https://www.cuzy.app/checkout/donate/) or [participating in the code](https://github.com/cuzy-app/banner). Thanks!
 
 ## Repository
 
@@ -26,4 +26,4 @@ https://github.com/cuzy-app/clean-theme
 
 ## Licence
 
-[GNU AGPL](https://github.com/cuzy-app/clean-theme/blob/master/docs/LICENCE.md)
+[GNU AGPL](https://github.com/cuzy-app/banner/blob/master/docs/LICENCE.md)

@@ -46,7 +46,7 @@ $module = Yii::$app->getModule('banner');
             <a href="https://www.cuzy.app/checkout/donate/"
                target="_blank">making a donation</a>
             or
-            <a href="https://github.com/cuzy-app/clean-theme"
+            <a href="https://github.com/cuzy-app/banner"
                target="_blank">participating in the code</a>.
             Thanks!
         </div>
