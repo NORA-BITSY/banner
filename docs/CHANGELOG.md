@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Unreleased
+1.0.2 (March 24, 2025)
 --------------------
 - Fix #2: Wrong links to the GitHub repository
 - Fix #1: Long text on small screen: make an automatic horizontal scroll
