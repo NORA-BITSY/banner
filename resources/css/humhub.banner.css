@@ -20,6 +20,45 @@
     color: var(--banner-font-color);
 }
 
+#banner-container {
+    margin: 0 auto;
+    max-width: fit-content;
+}
+
+#banner-close {
+    color: var(--banner-font-color);
+    opacity: 0.7;
+    padding-left: 15px;
+    height: var(--banner-height);
+    display: block;
+}
+
+#banner-content {
+    width: max-content;
+}
+
+#banner.scrolling #banner-content {
+    animation: scroll-text 10s linear infinite;
+}
+
+#banner.scrolling #banner-content::after {
+    content: attr(data-text);
+    margin-left: 20px;
+}
+
+#banner.scrolling:hover #banner-content {
+    animation-play-state: paused;
+}
+
+#banner.scrolling #banner-close {
+    display: none;
+}
+
+@keyframes scroll-text {
+    0% { transform: translateX(15%); }
+    100% { transform: translateX(-50%); }
+}
+
 /* TODO Remove this CSS when using Bootstrap 5 on HumHub 1.18 */
 #banner .btn-outlined {
     background-color: transparent;
@@ -36,14 +75,6 @@
     background-color: var(--link);
     color: var(--text-color-contrast);
     border-color: var(--link);
-}
-
-#banner-close {
-    color: var(--banner-font-color);
-    opacity: 0.7;
-    padding-left: 15px;
-    height: var(--banner-height);
-    display: block;
 }
 
 @media screen and (max-width: 430px) {

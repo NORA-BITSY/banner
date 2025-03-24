@@ -21,16 +21,20 @@ use humhub\modules\ui\view\components\View;
     <?php if ($closeButton): ?>
         <button id="banner-close" type="button" class="close">×</button>
     <?php endif; ?>
-    <?= $content ?>
+    <div id="banner-container">
+        <div id="banner-content">
+            <?= $content ?>
+        </div>
+    </div>
 </div>
 
 <script <?= Html::nonce() ?>>
     $(function () {
         <?php if ($closeButton): ?>
-            $('#banner-close').on('click', function () {
-                $('#banner').hide();
-                $(':root').css('--banner-height', '0px');
-            });
+        $('#banner-close').on('click', function () {
+            $('#banner').hide();
+            $(':root').css('--banner-height', '0px');
+        });
         <?php endif; ?>
     });
 </script>
