@@ -1,12 +1,12 @@
 :root {
-    --banner-height: 40px;
-    --banner-font-color: var(--text-color-contrast);
-    --banner-bg-color: var(--info);
+    --hh-banner-height: 40px;
+    --hh-banner-font-color: var(--text-color-contrast);
+    --hh-banner-bg-color: var(--info);
 }
 
 #banner {
-    height: var(--banner-height);
-    line-height: var(--banner-height);
+    height: var(--hh-banner-height);
+    line-height: var(--hh-banner-height);
     top: 0;
     z-index: 1030;
     position: fixed;
@@ -16,8 +16,8 @@
     text-overflow: ellipsis;
     padding: 0 15px;
     text-align: center;
-    background-color: var(--banner-bg-color);
-    color: var(--banner-font-color);
+    background-color: var(--hh-banner-bg-color);
+    color: var(--hh-banner-font-color);
 }
 
 #banner-container {
@@ -26,10 +26,10 @@
 }
 
 #banner-close {
-    color: var(--banner-font-color);
+    color: var(--hh-banner-font-color);
     opacity: 0.7;
     padding-left: 15px;
-    height: var(--banner-height);
+    height: var(--hh-banner-height);
     display: block;
 }
 
@@ -85,21 +85,21 @@
 }
 
 body {
-    padding-top: calc(var(--banner-height) + var(--hh-fixed-header-height, 0px));
+    padding-top: calc(var(--hh-banner-height) + var(--hh-fixed-header-height, 0px));
     &.clean-theme {
-        padding-top: calc(var(--banner-height) + var(--hh-ct-top-bar-height) + var(--hh-ct-top-bar-bottom-spacing));
+        padding-top: calc(var(--hh-banner-height) + var(--hh-ct-top-bar-height) + var(--hh-ct-top-bar-bottom-spacing));
     }
 }
 
 #topbar, #topbar-first {
-    top: var(--banner-height);
+    top: var(--hh-banner-height);
 }
 #topbar-second {
-    top: calc(var(--banner-height) + 50px);
+    top: calc(var(--hh-banner-height) + 50px);
 }
 
 @media (max-width: 570px) {
     #topbar > .container .notifications .dropdown-menu {
-        top: calc(var(--hh-ct-top-bar-height, 0px) + var(--banner-height)) !important;
+        top: calc(var(--hh-ct-top-bar-height, 0px) + var(--hh-banner-height)) !important;
     }
 }

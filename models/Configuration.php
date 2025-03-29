@@ -9,7 +9,6 @@
 namespace humhub\modules\banner\models;
 
 use humhub\components\SettingsManager;
-use humhub\libs\Html;
 use Yii;
 use yii\base\Model;
 
@@ -19,6 +18,7 @@ class Configuration extends Model
 
     public bool $enabled = false;
     public ?string $content = '';
+    public ?string $contentGuests = '';
     public bool $closeButton = false;
 
     /**
@@ -28,7 +28,7 @@ class Configuration extends Model
     {
         return [
             [['enabled', 'closeButton'], 'boolean'],
-            [['content'], 'string'],
+            [['content', 'contentGuests'], 'string'],
         ];
     }
 
@@ -39,29 +39,18 @@ class Configuration extends Model
     {
         return [
             'enabled' => Yii::t('BannerModule.config', 'Enabled'),
-            'content' => Yii::t('BannerModule.config', 'Banner content (HTML)'),
+            'content' => Yii::t('BannerModule.config', 'Banner content for logged-in users (HTML)'),
+            'contentGuests' => Yii::t('BannerModule.config', 'Banner content for visitors / logged-out users (HTML)'),
             'closeButton' => Yii::t('BannerModule.config', 'Close button'),
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeHints()
     {
-        $example =
-'<style>
-    :root {
-        --banner-height: 60px; /** default 40px */
-        --banner-font-color: var(--text-color-contrast); /** default var(--text-color-contrast) */
-        --banner-bg-color: var(--danger); /** default var(--info) */
-    }
-</style>';
-
+        $contentHint = Yii::t('BannerModule.config', 'If the content is empty, the banner will not be displayed.');
         return [
-            'content' =>
-                Yii::t('BannerModule.config', 'Examples of CSS values that can be overwritten:') . '<br>' .
-                Html::tag('code', nl2br(str_replace(' ', '&nbsp;', Html::encode($example)))),
+            'content' => $contentHint,
+            'contentGuests' => $contentHint,
         ];
     }
 
@@ -70,6 +59,7 @@ class Configuration extends Model
         $this->enabled = (bool)$this->settingsManager->get('enabled', $this->enabled);
         $this->closeButton = (bool)$this->settingsManager->get('closeButton', $this->closeButton);
         $this->content = $this->settingsManager->get('content', $this->content);
+        $this->contentGuests = $this->settingsManager->get('contentGuests', $this->contentGuests);
     }
 
     public function save(): bool
@@ -80,7 +70,8 @@ class Configuration extends Model
 
         $this->settingsManager->set('enabled', $this->enabled);
         $this->settingsManager->set('closeButton', $this->closeButton);
-        $this->settingsManager->set('content', $this->content);
+        $this->settingsManager->set('content', trim($this->content));
+        $this->settingsManager->set('contentGuests', trim($this->contentGuests));
 
         return true;
     }

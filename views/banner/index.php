@@ -33,7 +33,7 @@ use humhub\modules\ui\view\components\View;
         <?php if ($closeButton): ?>
         $('#banner-close').on('click', function () {
             $('#banner').hide();
-            $(':root').css('--banner-height', '0px');
+            $(':root').css('--hh-banner-height', '0px');
         });
         <?php endif; ?>
     });

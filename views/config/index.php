@@ -6,6 +6,7 @@
  * @author [Marc FARRE](https://marc.fun)
  */
 
+use humhub\libs\Html;
 use humhub\modules\banner\models\Configuration;
 use humhub\modules\banner\Module;
 use humhub\modules\ui\form\widgets\ActiveForm;
@@ -62,6 +63,25 @@ $module = Yii::$app->getModule('banner');
         <?= $form->field($model, 'enabled')->checkbox() ?>
         <?= $form->field($model, 'closeButton')->checkbox() ?>
         <?= $form->field($model, 'content')->widget(CodeMirrorInputWidget::class) ?>
+        <?= $form->field($model, 'contentGuests')->widget(CodeMirrorInputWidget::class) ?>
+
+        <?php $example = '<style>
+    :root {
+        --hh-banner-height: 60px; /** default 40px */
+        --hh-banner-font-color: var(--text-color-contrast); /** default var(--text-color-contrast) */
+        --hh-banner-bg-color: var(--danger); /** default var(--info) */
+    }
+</style>'; ?>
+
+        <?= Yii::t('BannerModule.config', 'Examples of CSS values that can be overwritten:') ?>
+        <br>
+        <div>
+            <code>
+                <?= nl2br(str_replace(' ', '&nbsp;', Html::encode($example))) ?>
+            </code>
+        </div>
+        <br>
+
         <?= Button::save()->submit() ?>
         <?php ActiveForm::end(); ?>
 

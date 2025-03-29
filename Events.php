@@ -17,10 +17,7 @@ class Events
 {
     public static function onViewBeginBody(Event $event)
     {
-        if (
-            Yii::$app->user->isGuest
-            || Yii::$app->request->isAjax
-        ) {
+        if (Yii::$app->request->isAjax) {
             return;
         }
 
@@ -28,7 +25,13 @@ class Events
         $module = Yii::$app->getModule('banner');
         $configuration = $module->getConfiguration();
 
-        if (!$configuration->enabled || !$configuration->content) {
+        if (!$configuration->enabled) {
+            return;
+        }
+
+        $closeButton = $configuration->closeButton;
+        $content = Yii::$app->user->isGuest ? $configuration->contentGuests : $configuration->content;
+        if (empty($content)) {
             return;
         }
 
@@ -38,8 +41,8 @@ class Events
         BannerAssets::register($view);
 
         echo Yii::$app->controller->renderPartial('@banner/views/banner/index', [
-            'content' => $configuration->content,
-            'closeButton' => $configuration->closeButton,
+            'content' => $content,
+            'closeButton' => $closeButton,
         ]);
     }
 }
