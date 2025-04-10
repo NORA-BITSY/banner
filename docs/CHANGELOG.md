@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1.1 (April 7, 2025)
+--------------------
+- Fix: Space menu on Enterprise theme
+
 1.1.0 (March 29, 2025)
 --------------------
 - Enh: Add a content field for visitors

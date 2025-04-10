@@ -89,6 +89,9 @@ body {
     &.clean-theme {
         padding-top: calc(var(--hh-banner-height) + var(--hh-ct-top-bar-height) + var(--hh-ct-top-bar-bottom-spacing));
     }
+    &.enterprise-theme .space-nav {
+        margin-top: calc(var(--hh-banner-height) + var(--hh-et-topbar-height));
+    }
 }
 
 #topbar, #topbar-first {
