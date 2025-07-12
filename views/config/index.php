@@ -62,6 +62,12 @@ $module = Yii::$app->getModule('banner');
         <?php $form = ActiveForm::begin(['acknowledge' => true]); ?>
         <?= $form->field($model, 'enabled')->checkbox() ?>
         <?= $form->field($model, 'closeButton')->checkbox() ?>
+        <?= $form->field($model, 'style')->dropDownList([
+            'info' => Yii::t('BannerModule.config', 'Info'),
+            'success' => Yii::t('BannerModule.config', 'Success'),
+            'warning' => Yii::t('BannerModule.config', 'Warning'),
+            'danger' => Yii::t('BannerModule.config', 'Danger'),
+        ]) ?>
         <?= $form->field($model, 'content')->widget(CodeMirrorInputWidget::class) ?>
         <?= $form->field($model, 'contentGuests')->widget(CodeMirrorInputWidget::class) ?>
 

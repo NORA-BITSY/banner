@@ -7,4 +7,9 @@ return [
   'Enabled' => 'Aktiv',
   'Examples of CSS values that can be overwritten:' => 'Beispiele für CSS-Werte, die überschrieben werden können:',
   'If the content is empty, the banner will not be displayed.' => 'Wenn der Inhalt leer ist, wird das Banner nicht angezeigt.',
+  'Style' => 'Stil',
+  'Info' => 'Info',
+  'Success' => 'Erfolg',
+  'Warning' => 'Warnung',
+  'Danger' => 'Gefahr',
 ];

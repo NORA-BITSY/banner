@@ -34,6 +34,7 @@ class Events
         if (empty($content)) {
             return;
         }
+        $style = $configuration->style;
 
         /** @var View $view */
         $view = $event->sender;
@@ -43,6 +44,7 @@ class Events
         echo Yii::$app->controller->renderPartial('@banner/views/banner/index', [
             'content' => $content,
             'closeButton' => $closeButton,
+            'style' => $style,
         ]);
     }
 }
