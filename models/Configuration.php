@@ -21,6 +21,7 @@ class Configuration extends Model
     public ?string $contentGuests = '';
     public bool $closeButton = false;
     public string $style = 'info';
+    public string $bannerType = BannerType::MANUAL;
 
     /**
      * @inheritdoc
@@ -31,6 +32,7 @@ class Configuration extends Model
             [['enabled', 'closeButton'], 'boolean'],
             [['content', 'contentGuests'], 'string'],
             ['style', 'in', 'range' => ['info', 'success', 'warning', 'danger']],
+            ['bannerType', 'in', 'range' => BannerType::getTypes()],
         ];
     }
 
@@ -45,6 +47,7 @@ class Configuration extends Model
             'contentGuests' => Yii::t('BannerModule.config', 'Banner content for visitors / logged-out users (HTML)'),
             'closeButton' => Yii::t('BannerModule.config', 'Close button'),
             'style' => Yii::t('BannerModule.config', 'Style'),
+            'bannerType' => Yii::t('BannerModule.config', 'Banner Type'),
         ];
     }
 
@@ -64,6 +67,7 @@ class Configuration extends Model
         $this->content = $this->settingsManager->get('content', $this->content);
         $this->contentGuests = $this->settingsManager->get('contentGuests', $this->contentGuests);
         $this->style = $this->settingsManager->get('style', $this->style);
+        $this->bannerType = $this->settingsManager->get('bannerType', $this->bannerType);
     }
 
     public function save(): bool
@@ -77,6 +81,7 @@ class Configuration extends Model
         $this->settingsManager->set('content', trim($this->content));
         $this->settingsManager->set('contentGuests', trim($this->contentGuests));
         $this->settingsManager->set('style', $this->style);
+        $this->settingsManager->set('bannerType', $this->bannerType);
 
         return true;
     }

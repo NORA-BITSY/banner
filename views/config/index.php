@@ -7,6 +7,7 @@
  */
 
 use humhub\libs\Html;
+use humhub\modules\banner\models\BannerType;
 use humhub\modules\banner\models\Configuration;
 use humhub\modules\banner\Module;
 use humhub\modules\ui\form\widgets\ActiveForm;
@@ -67,6 +68,14 @@ $module = Yii::$app->getModule('banner');
             'success' => Yii::t('BannerModule.config', 'Success'),
             'warning' => Yii::t('BannerModule.config', 'Warning'),
             'danger' => Yii::t('BannerModule.config', 'Danger'),
+        ]) ?>
+        <?= $form->field($model, 'bannerType')->dropDownList([
+            BannerType::MANUAL => Yii::t('BannerModule.config', 'Manual'),
+            BannerType::WEATHER_ALERT => Yii::t('BannerModule.config', 'Weather Alert'),
+            BannerType::SAFETY_NOTICE => Yii::t('BannerModule.config', 'Safety Notice'),
+            BannerType::HARBOR_UPDATE => Yii::t('BannerModule.config', 'Harbor Update'),
+            BannerType::EVENT_ANNOUNCEMENT => Yii::t('BannerModule.config', 'Event Announcement'),
+            BannerType::MAINTENANCE_WINDOW => Yii::t('BannerModule.config', 'Maintenance Window'),
         ]) ?>
         <?= $form->field($model, 'content')->widget(CodeMirrorInputWidget::class) ?>
         <?= $form->field($model, 'contentGuests')->widget(CodeMirrorInputWidget::class) ?>

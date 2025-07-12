@@ -6,18 +6,28 @@
  * @author [Marc FARRE](https://marc.fun)
  */
 
+use humhub\libs\Html;
+use humhub\modules\banner\assets\BannerAssets;
+use humhub\modules\banner\models\Configuration;
+use humhub\modules\ui\view\components\View;
+use humhub\modules\banner\models\BannerType;
+
 /**
- * @var $view View
- * @var $content string
- * @var $closeButton bool
- * @var $style string
+ * @var $this View
+ * @var $configuration Configuration
  */
 
-use humhub\libs\Html;
-use humhub\modules\ui\view\components\View;
-
+$id = 'banner';
+$close = $configuration->closeButton ? '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' : '';
+if ($configuration->bannerType === BannerType::MANUAL) {
+    $content = Yii::$app->user->isGuest ? $configuration->contentGuests : $configuration->content;
+} else {
+    $content = $this->render('types/' . $configuration->bannerType);
+}
+$style = $configuration->style;
 ?>
 
+<?php if (!empty(trim($content))): ?>
 <div id="banner" class="alert alert-<?= Html::encode($style) ?>" role="alert">
     <?php if ($closeButton): ?>
         <button id="banner-close" type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -46,3 +56,4 @@ use humhub\modules\ui\view\components\View;
         }
     });
 </script>
+<?php endif; ?>
